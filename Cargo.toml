@@ -1,0 +1,16 @@
+[package]
+name = "shortlyBackend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "=0.5.0-rc.3"
+sha2 = "0.10"
+base64 = "0.21.2"
+
+[dependencies.mongodb]
+version = "2.2.0"
+default-features = false
+features = ["sync"]
