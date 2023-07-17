@@ -1,8 +1,11 @@
+mod models;
+mod test;
+
 #[macro_use] extern crate rocket;
 use sha2::{Sha256, Digest};
 use base64::{Engine as _, engine::general_purpose, alphabet};
 
-struct UrlShortener{
+pub struct UrlShortener{
     long_url: String,
     short_url: String,
 
@@ -45,6 +48,12 @@ fn index(long_url: &str) -> String{
     let long_url = String::from(long_url);
     let short_url = url_shortener.shorten_url(long_url);
     format!("Hello, {}!", short_url)
+    // intialize db here
+    // check if long_url is in db
+    // if not, add it to db
+    // return short_url
+
+
 }
 
 #[launch]
