@@ -6,9 +6,10 @@ mod tests {
     #[test]
     fn test_database_new() {
         // Create a new instance of the Database
-        let database = Database::new();
+        let database = Database::new("mongodb://localhost:27017", "url_shortener", "urls");
 
-        // Assert that the client and collection are not null
-        assert!(database.collection.name() == "urls");
+        // Check if the database is created
+        assert!(database.is_ok());
+
     }
 }
